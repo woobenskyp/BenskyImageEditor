@@ -21,14 +21,6 @@ class ImageCropTab(QWidget):
 
         mainLayout.addWidget(self.imageCrop)
 
-        self.rotationSlider = Slider(self.mainWindow)
-        self.rotationSlider.setOrientation(Qt.Horizontal)
-        self.rotationSlider.setRange(-45, 45)
-        self.rotationSlider.setSliderPosition(0)
-        self.rotationSlider.valueChanged.connect(
-            lambda value: self.imageCrop.rotateCrop(value - self.rotationSlider.previousValue))
-        mainLayout.addWidget(self.rotationSlider)
-
         transformLayout = QHBoxLayout()
         transformLayout.setContentsMargins(8, 8, 8, 8)
         self.rotateLeftButton = QPushButton()
